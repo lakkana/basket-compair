@@ -43,7 +43,7 @@ public static class VehicleRecommendationFunction
                 .FirstOrDefault(v =>
                     string.Equals(v["make"]?.ToString(), make, StringComparison.OrdinalIgnoreCase) 
                     && string.Equals(v["model"]?.ToString(), model, StringComparison.OrdinalIgnoreCase)
-                    //&& Similarity(v["version_name"]?.ToString() ?? "", version) >= 0.8
+                    && Similarity(v["version_name"]?.ToString() ?? "", version) >= 0.6
                 );
 
             if (benchmark == null)
