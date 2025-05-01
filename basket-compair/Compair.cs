@@ -20,7 +20,7 @@ public static class VehicleRecommendationFunction
 
     static VehicleRecommendationFunction()
     {
-        string filePath = Path.Combine(Environment.CurrentDirectory, "hackathon10_input_cleaned_updated.json");
+        string filePath = Path.Combine(Environment.CurrentDirectory, "dataset.json");
         string json = File.ReadAllText(filePath);
         vehicleData = JArray.Parse(json);
     }
@@ -177,9 +177,9 @@ You are an AI automotive data expert. Here is the benchmark and candidate list.
 
     private static async Task<string> CallOpenAI(string prompt)
     {
-        string endpoint = Environment.GetEnvironmentVariable("AZURE_OPENAI_ENDPOINT");
-        string deployment = Environment.GetEnvironmentVariable("AZURE_OPENAI_DEPLOYMENT");
-        string apiKey = Environment.GetEnvironmentVariable("AZURE_OPENAI_API_KEY");
+        string endpoint = "https://datasciencesandbox2.openai.azure.com";
+        string deployment = "gpt-4o-options-agent";
+        string apiKey = "ccf9011c0dc744e4b0b7726f0340d344";
 
         var request = new
         {
